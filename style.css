@@ -1,0 +1,44 @@
+$width: 0;
+$height: 0;
+
+@function square($per, $width:$width, $height:$height) {
+	@return $height * $per/$width*1%;
+}
+
+@function em($pixels, $default:16) {
+	@return $pixels/$default*1em;
+}
+
+.bevel {
+	box-shadow: inset em(2) em(2) em(2) rgba(255, 255, 255, .4), inset em(-2) em(-2) em(2) rgba(0, 0, 0, .4);
+	border: em(1) solid#ccc;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(45deg, hsl(53deg 42% 30% /50%), rgb(255 0 / 0%));
+	height: 100vh;
+	width: 100vh;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+.PS4-dualshock {
+	$length: 500px;
+	$width: $length*1.4 !global;
+	$height: $length !global;
+	width: $width;
+	height: $height;
+	$current-size: $length / 37.3;
+	$btn-color: #d4d4d4;
+	$bg-color: #adadad;
+	position: relative;
+	color: white;
+	font-size: $current-size;
+	font-family: Arial;
+	font-weight: bold;
+	filter: drop-shadow(0px 0px 2em rgba(0, 0, 0, 0.3));
+}
